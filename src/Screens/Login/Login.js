@@ -1,17 +1,29 @@
 import React from 'react';
-import {Text, Button} from 'react-native';
+import {Text, View, TouchableOpacity} from 'react-native';
+import {useDispatch} from 'react-redux'
 
-const Login = props => {
-  const goToTimeline = () => {
-    props.navigation.navigate('TimelineNavigator');
+import styles from '../styles';
+import {login} from '../../store/actions/authentication'
+
+const LoginScreen = props => {
+  const dispatch = useDispatch();
+  const loginHandler = () => {
+    debugger
+    dispatch(login());
   };
   return (
     <>
-      <Text>Login</Text>
-      <Button title="Go to timeline" onPress={goToTimeline} />
+      <Text style={styles.header}>Welcome</Text>
+      <TouchableOpacity onPress={loginHandler}>
+        <View style={{width: 100, height: 50}}>
+          <Text>
+            Login
+          </Text>
+        </View>
+        </TouchableOpacity>   
     </>
   );
 };
 
-export default Login;
+export default LoginScreen;
   

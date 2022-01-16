@@ -1,10 +1,10 @@
 import { createStore, combineReducers} from "redux";
 import carsReducer from "./store/reducers/cars";
-import loginReducer from "./store/reducers/login";
+import authenticationReducer from "./store/reducers/authentication";
 
 const rootReducer = combineReducers({
     cars: carsReducer,
-    login: loginReducer
+    auth: authenticationReducer
 });
 
 const store = createStore(rootReducer);
