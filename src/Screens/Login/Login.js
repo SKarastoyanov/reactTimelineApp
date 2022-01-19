@@ -14,13 +14,15 @@ const LoginScreen = props => {
   return (
     <>
       <Text style={styles.header}>Welcome</Text>
+      <View style={{alignItems: 'center'}}>
       <TouchableOpacity onPress={loginHandler}>
-        <View style={{width: 100, height: 50}}>
-          <Text>
+        <View style={styles.button}>
+          <Text style={{fontSize: 20, fontWeight: 'bold'}}>
             Login
           </Text>
         </View>
         </TouchableOpacity>   
+      </View>
     </>
   );
 };
